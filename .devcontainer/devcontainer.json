@@ -1,0 +1,55 @@
+{
+    "name": "${localWorkspaceFolderBasename}",
+    "service": "devcontainer",
+    "remoteUser": "vscode",
+    "workspaceFolder": "/workspace",
+    "dockerComposeFile": [
+        "./compose.yml"
+    ],
+    "forwardPorts": [
+        8000
+    ],
+    "postCreateCommand": "sh .devcontainer/scripts/post_create.sh",
+    "postStartCommand": "sh .devcontainer/scripts/post_start.sh ${containerWorkspaceFolder}",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "editor.guides.bracketPairs": true,
+                "editor.formatOnSave": true,
+                "[rust]": {
+                    "editor.formatOnSave": true,
+                    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+                    "editor.formatOnPaste": true,
+                    "editor.formatOnType": true
+                },
+                "rust-analyzer.checkOnSave": true,
+                "rust-analyzer.check.command": "clippy",
+                "rust-analyzer.check.extraArgs": [
+                    "--",
+                    "-A",
+                    "clippy::needless_return"
+                ]
+            },
+            "extensions": [
+                // Rust関連
+                "rust-lang.rust-analyzer",
+                "fill-labs.dependi",
+                "tamasfe.even-better-toml",
+                "swellaby.vscode-rust-test-adapter",
+                "jscearcy.rust-doc-viewer",
+                "ms-vscode.live-server",
+                "vadimcn.vscode-lldb",
+                // Git関連
+                "mhutchie.git-graph",
+                "eamodio.gitlens",
+                // その他
+                "streetsidesoftware.code-spell-checker",
+                "naumovs.color-highlight",
+                "formulahendry.auto-rename-tag",
+                "styled-components.vscode-styled-components",
+                "Gruntfuggly.todo-tree",
+                "oderwat.indent-rainbow"
+            ]
+        }
+    }
+}
