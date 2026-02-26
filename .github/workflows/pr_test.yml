@@ -14,7 +14,7 @@ jobs:
       # ワークフローの可視化
       - uses: Kesin11/actions-timeline@v3
       # チェックアウト
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
