@@ -1,4 +1,4 @@
-FROM rust:1.93.1-trixie
+FROM rust:1.94.0-trixie
 
 USER root
 ENV DEBIAN_FRONTEND=noninteractive
